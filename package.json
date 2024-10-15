@@ -1,0 +1,14 @@
+{
+  "name": "component-structure-scaffold",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "create-vite": "^5.5.3"
+  }
+}
