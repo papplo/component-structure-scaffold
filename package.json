@@ -2,7 +2,9 @@
   "name": "component-structure-scaffold",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "repository": {
+    "url": "https://papplo.github.com/component-structure-scaffold"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
