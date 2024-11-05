@@ -1,0 +1,8 @@
+should place the search field on the top bar
+should start search once the user clicks "Search"
+should contain a placeholder with grey-colored text
+should remove the placeholder once the user starts typing
+should perform search with city, hotel name, street, or all combined
+should support English, French, German, and Ukrainian
+should not allow typing more than 200 symbols
+should show a warning message if special symbols are typed
