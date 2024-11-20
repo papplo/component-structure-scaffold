@@ -1,4 +1,3 @@
-
 // src/components/DataPivotComponent.tsx
 
 import React, { useState, useEffect } from 'react';
@@ -42,20 +41,23 @@ const DataPivotComponent: React.FC<DataPivotComponentProps> = ({ endpoint }) => 
 
   // Function to fetch data from the API
   const fetchData = async (requestBody: RequestBody): Promise<DataResponse> => {
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(requestBody),
+    // Simulate network delay
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Generate mock data based on queries
+    const mockData: Record<string, Series[]> = {};
+
+    requestBody.query.forEach((query, index) => {
+      mockData[query] = Array.from({ length: 24 }, (_, i) => ({
+        mtu: i + 1,
+        edate: 241121,
+        prop1: Math.floor(Math.random() * 100),
+        prop2: Math.floor(Math.random() * 100),
+        prop3: Math.floor(Math.random() * 100),
+      }));
     });
 
-    if (!response.ok) {
-      throw new Error(`Error fetching data: ${response.statusText}`);
-    }
-
-    const data: DataResponse = await response.json();
-    return data;
+    return { data: mockData };
   };
 
   // Function to pivot the data
