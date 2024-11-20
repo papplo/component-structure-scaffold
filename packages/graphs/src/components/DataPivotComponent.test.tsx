@@ -1,10 +1,10 @@
 // src/components/DataPivotComponent.test.tsx
 
 import React from 'react';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import DataPivotComponent from './DataPivotComponent';
 
 // Mock fetch
@@ -25,7 +25,7 @@ const mockResponse = {
 
 describe('DataPivotComponent', () => {
   beforeEach(() => {
-    (fetch as unknown as vi.Mock).mockClear();
+    (fetch as unknown as vi.Mock).mockClear()
   });
 
   it('renders loading state initially', async () => {
